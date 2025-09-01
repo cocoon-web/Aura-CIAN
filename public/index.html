@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="screen-1" class="screen">
+        <div class="lang-selector">
+            <button id="lang-es">ES</button>
+            <button id="lang-en">EN</button>
+        </div>
+        <h1>Bienvenido a Aura</h1>
+        <p>Tu coach digital impulsado por IA.</p>
+        
+        <div id="screen-1" class="screen">
+    <h1>¡Qué bueno que estás aquí!</h1>
+    <p>Soy <strong>Aura, tu colaboradora de IA neuroafirmativa</strong>, diseñada para ayudarte en tu camino de transformación y logro de tus metas personales. Inicia sesión para empezar a conversar.</p>
+    
+    <div class="auth-buttons">
+        <button id="google-login">Iniciar sesión con Google</button>
+    </div>
+</div>
+    </div>
+
+    <div id="screen-2" class="screen hidden">
+        <div class="header">
+            <div class="profile">
+                </div>
+            <button id="logout-button">Cerrar sesión</button>
+        </div>
+        <div class="chat-area">
+            <p>¡Hola! Soy Aura. ¿En qué puedo ayudarte hoy?</p>
+        </div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
