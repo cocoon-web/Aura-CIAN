@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .message.user-message {
+            background-color: #f0f4f8;
+            border-radius: 12px;
+            padding: 10px 15px;
+            max-width: 80%;
+            margin-left: auto;
+            text-align: right;
+        }
+        .message.aura-message {
+            background-color: #d1e7dd;
+            border-radius: 12px;
+            padding: 10px 15px;
+            max-width: 80%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-500 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div id="auth-screen" class="max-w-md w-full p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg text-center transition-opacity duration-500 ease-in">
+        <div class="star-logo-container mb-4">
+            <img src="https://elpezvolador.org/wp-content/uploads/2025/08/logo_el_pez_volador_educacion.png" alt="Estrella de Aura" class="aura-star-logo w-24 mx-auto">
+        </div>
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Bienvenido a Aura</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">Tu coach digital impulsado por IA.</p>
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">¡Qué bueno que estás aquí!</h2>
+        <p class="text-gray-500 dark:text-gray-400 mb-6">Soy Aura, tu colaboradora de IA neuroafirmativa, diseñada para ayudarte en tu camino de transformación y logro de tus metas personales. Inicia sesión para empezar a conversar.</p>
+        <button id="google-login-btn" class="w-full px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-full shadow-md hover:bg-blue-700 transition-colors duration-300">
+            Iniciar sesión con Google
+        </button>
+    </div>
+
+    <div id="declarations-screen" class="max-w-xl w-full p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg hidden transition-opacity duration-500 ease-in">
+        <h2 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-4">Formulario de Consentimiento</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4 text-justify">
+            Este formulario de consentimiento se presenta en el marco de un proyecto de investigación y desarrollo continuo. Estamos trabajando activamente en la formulación y mejora de nuestras declaraciones de consentimiento informado, intenciones y limitaciones, de acuerdo con el estado de la cuestión en ética de la Inteligencia Artificial, protección de datos personales y las mejores prácticas en coaching digital.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 mb-4 text-justify">
+            La información que compartas será utilizada para mejorar la experiencia de Aura y, fundamentalmente, con fines científicos como parte del proyecto de investigación IKIGAI + Sumak Kawsay. Tu privacidad es primordial, y tus datos se manejarán con el máximo cuidado y de forma seudonimizada para proteger tu identidad.
+        </p>
+        <div class="flex justify-center mt-6">
+            <button id="accept-btn" class="px-6 py-3 text-lg font-medium text-white bg-green-600 rounded-full shadow-md hover:bg-green-700 transition-colors duration-300">
+                Aceptar
+            </button>
+        </div>
+    </div>
+
+    <div id="chat-screen" class="max-w-md w-full h-[600px] p-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex flex-col hidden transition-opacity duration-500 ease-in">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">Aura</h1>
+            <button id="logout-btn" class="px-4 py-2 text-sm text-white bg-red-600 rounded-full shadow-md hover:bg-red-700 transition-colors duration-300">
+                Cerrar sesión
+            </button>
+        </div>
+        
+        <div id="chat-area" class="flex-grow overflow-y-auto space-y-4 mb-4">
+            <div class="message aura-message">
+                <p>¡Hola! Soy Aura. ¿En qué puedo ayudarte hoy?</p>
+            </div>
+        </div>
+
+        <div class="flex mt-4">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje..." class="flex-grow px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+            <button id="send-btn" class="ml-2 px-6 py-2 text-white bg-blue-600 rounded-full shadow-md hover:bg-blue-700 transition-colors duration-300">
+                Enviar
+            </button>
+        </div>
+    </div>
+    
+    <footer class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        <div class="flex items-center justify-center space-x-2 mb-2">
+            <img src="https://elpezvolador.org/wp-content/uploads/2025/08/logo_el_pez_volador-cerena.png" alt="Logo El Pez Volador Cerena" class="h-8">
+        </div>
+        <p>
+            © Fundación El Pez Volador / Centro de Referencia en Neurodiversidad y Autismo (Cerena) - 
+            <a href="https://elpezvolador.org" target="_blank" class="text-blue-500 hover:underline">
+                https://elpezvolador.org
+            </a>
+        </p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
