@@ -1,6 +1,0 @@
-# Este archivo indica a Google Cloud Build qué archivos ignorar
-# durante el proceso de compilación para aplicaciones front-end.
-node_modules
-.git
-.gitignore
-.gcloudignore
