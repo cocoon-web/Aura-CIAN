@@ -23,6 +23,8 @@ El proyecto desarrolla Aura CIAN para:
 
 -   *Regístrate aquí:* [Formulario de Interés para Beta Testers](https://forms.gle/e945xxCDydQib8cS7)
 
+-   *Web del proyecto:* [Web de Aura CIAN](https://aura.elpezvolador.org)
+
 -   ---
 
 # Project Philosophy
@@ -47,3 +49,5 @@ The project develops Aura CIAN to:
 Would you like to be one of the first people to experience Aura?
 
 -   **Register here:** [Expression of Interest Form for Beta Testers](https://forms.gle/e945xxCDydQib8cS7)
+
+-   **Project Website:** [Web de Aura CIAN](https://aura.elpezvolador.org)
